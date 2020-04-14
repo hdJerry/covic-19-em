@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _infectionsByRequestedTime = require('./infectionsByRequestedTime');
@@ -11,12 +11,11 @@ var _infectionsByRequestedTime2 = _interopRequireDefault(_infectionsByRequestedT
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var severeCasesByRequestedTime = function severeCasesByRequestedTime(time, data) {
+  var severeCasesByRequested = (0, _infectionsByRequestedTime2.default)(time, data);
 
-    var severeCasesByRequested = (0, _infectionsByRequestedTime2.default)(time, data);
+  severeCasesByRequested.severeCasesByRequestedTime = severeCasesByRequested.infectionByRequestTime.severeImpact * 0.15;
 
-    severeCasesByRequested.severeCasesByRequestedTime = severeCasesByRequested.infectionByRequestTime.severeImpact * 0.15;
-
-    return severeCasesByRequested;
+  return severeCasesByRequested;
 };
 
 // severeCasesByRequestedTime = infectionByRequestTime;
@@ -37,4 +36,5 @@ var severeCasesByRequestedTime = function severeCasesByRequestedTime(time, data)
 // }));
 
 
+/* eslint-disable max-len */
 exports.default = severeCasesByRequestedTime;

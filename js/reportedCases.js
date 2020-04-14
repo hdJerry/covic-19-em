@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _estimator = require('./estimator');
@@ -11,9 +11,9 @@ var _estimator2 = _interopRequireDefault(_estimator);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var reportedCases = function reportedCases(data) {
-    var result = (0, _estimator2.default)(data);
+  var result = (0, _estimator2.default)(data);
 
-    return result;
+  return result;
 };
 
 // let r = reportedCases({

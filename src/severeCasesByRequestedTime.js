@@ -1,15 +1,13 @@
+/* eslint-disable max-len */
 import infectionByRequestTime from './infectionsByRequestedTime';
 
-const severeCasesByRequestedTime = (time,data)=>{
+const severeCasesByRequestedTime = (time, data) => {
+  const severeCasesByRequested = infectionByRequestTime(time, data);
 
-    let severeCasesByRequested = infectionByRequestTime(time,data);
-    
-    severeCasesByRequested.severeCasesByRequestedTime = severeCasesByRequested.infectionByRequestTime.severeImpact * 0.15;
+  severeCasesByRequested.severeCasesByRequestedTime = severeCasesByRequested.infectionByRequestTime.severeImpact * 0.15;
 
-    return severeCasesByRequested;
-
-}
-
+  return severeCasesByRequested;
+};
 
 
 // severeCasesByRequestedTime = infectionByRequestTime;
@@ -28,7 +26,6 @@ const severeCasesByRequestedTime = (time,data)=>{
 //     population: 66622705,
 //     totalHospitalBeds: 1380614
 // }));
-
 
 
 export default severeCasesByRequestedTime;

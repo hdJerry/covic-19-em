@@ -1,11 +1,11 @@
 import covid19ImpactEstimator from './estimator';
 
 
-const reportedCases = (data)=>{
-    let result = covid19ImpactEstimator(data);
+const reportedCases = (data) => {
+  const result = covid19ImpactEstimator(data);
 
-    return result
-}
+  return result;
+};
 
 // let r = reportedCases({
 //     region: {
@@ -25,5 +25,3 @@ const reportedCases = (data)=>{
 
 
 export default reportedCases;
-
-
