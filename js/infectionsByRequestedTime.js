@@ -4,19 +4,16 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _reportedCases = require('./reportedCases');
+var _reportedCases2 = require('./reportedCases');
 
-var _reportedCases2 = _interopRequireDefault(_reportedCases);
+var _reportedCases3 = _interopRequireDefault(_reportedCases2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var impact = _reportedCases2.default.impact,
-    severeImpact = _reportedCases2.default.severeImpact;
-
-
-console.log();
-
-var infectionByRequestTime = function infectionByRequestTime(day) {
+var infectionByRequestTime = function infectionByRequestTime(day, data) {
+    var _reportedCases = (0, _reportedCases3.default)(data),
+        impact = _reportedCases.impact,
+        severeImpact = _reportedCases.severeImpact;
 
     var factor = Math.floor(10 * day / 30);
 
@@ -24,7 +21,7 @@ var infectionByRequestTime = function infectionByRequestTime(day) {
     var severeImpactX = severeImpact.currentlyInfected * Math.pow(2, factor);
 
     return {
-        reportedCases: _reportedCases2.default,
+        reportedCases: (0, _reportedCases3.default)(data),
         infectionByRequestTime: {
             impact: impactX,
             severeImpact: severeImpactX

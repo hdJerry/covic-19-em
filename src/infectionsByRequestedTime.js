@@ -1,15 +1,15 @@
 import reportedCases from './reportedCases';
 
-let {
-    impact,
-    severeImpact
-} = reportedCases;
-
-console.log();
 
 
-const infectionByRequestTime = (day) => {
 
+
+const infectionByRequestTime = (day,data) => {
+    
+    let {
+        impact,
+        severeImpact
+    } = reportedCases(data);
     let factor = Math.floor(
         (10 * day) / 30
     );
@@ -18,7 +18,7 @@ const infectionByRequestTime = (day) => {
     let severeImpactX = severeImpact.currentlyInfected * (Math.pow(2, factor));
 
     return {
-        reportedCases,
+        reportedCases:reportedCases(data),
         infectionByRequestTime:{
             impact: impactX,
             severeImpact: severeImpactX

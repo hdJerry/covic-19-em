@@ -1,19 +1,27 @@
 import covid19ImpactEstimator from './estimator';
 
 
-const reportedCases = covid19ImpactEstimator({
-    region: {
-        name: "Africa",
-        avgAge: 19.7,
-        avgDailyIncomeInUSD: 5,
-        avgDailyIncomePopulation: 0.71
-    },
-    periodType: "days",
-    timeToElapse: 58,
-    reportedCases: 674,
-    population: 66622705,
-    totalHospitalBeds: 1380614
-});
+const reportedCases = (data)=>{
+    let result = covid19ImpactEstimator(data);
+
+    return result
+}
+
+// let r = reportedCases({
+//     region: {
+//         name: "Africa",
+//         avgAge: 19.7,
+//         avgDailyIncomeInUSD: 5,
+//         avgDailyIncomePopulation: 0.71
+//     },
+//     periodType: "days",
+//     timeToElapse: 58,
+//     reportedCases: 674,
+//     population: 66622705,
+//     totalHospitalBeds: 1380614
+// });
+
+// console.log(r);
 
 
 export default reportedCases;
