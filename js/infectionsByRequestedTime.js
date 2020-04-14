@@ -1,35 +1,32 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
-var _reportedCases = require('./reportedCases');
+var _reportedCases2 = require('./reportedCases');
 
-var _reportedCases2 = _interopRequireDefault(_reportedCases);
+var _reportedCases3 = _interopRequireDefault(_reportedCases2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var impact = _reportedCases2.default.impact,
-    severeImpact = _reportedCases2.default.severeImpact;
+var infectionByRequestTime = function infectionByRequestTime(day, data) {
+  var _reportedCases = (0, _reportedCases3.default)(data),
+      impact = _reportedCases.impact,
+      severeImpact = _reportedCases.severeImpact;
 
+  var factor = Math.floor(10 * day / 30);
 
-console.log();
+  var impactX = impact.currentlyInfected * Math.pow(2, factor);
+  var severeImpactX = severeImpact.currentlyInfected * Math.pow(2, factor);
 
-var infectionByRequestTime = function infectionByRequestTime(day) {
-
-    var factor = Math.floor(10 * day / 30);
-
-    var impactX = impact.currentlyInfected * Math.pow(2, factor);
-    var severeImpactX = severeImpact.currentlyInfected * Math.pow(2, factor);
-
-    return {
-        reportedCases: _reportedCases2.default,
-        infectionByRequestTime: {
-            impact: impactX,
-            severeImpact: severeImpactX
-        }
-    };
+  return {
+    reportedCases: (0, _reportedCases3.default)(data),
+    infectionByRequestTime: {
+      impact: impactX,
+      severeImpact: severeImpactX
+    }
+  };
 };
 
 // infectionByRequestTime(30);

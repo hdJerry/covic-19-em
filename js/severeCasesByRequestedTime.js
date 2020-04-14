@@ -10,13 +10,31 @@ var _infectionsByRequestedTime2 = _interopRequireDefault(_infectionsByRequestedT
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var severeCasesByRequestedTime = (0, _infectionsByRequestedTime2.default)(30);
+var severeCasesByRequestedTime = function severeCasesByRequestedTime(time, data) {
+  var severeCasesByRequested = (0, _infectionsByRequestedTime2.default)(time, data);
 
-severeCasesByRequestedTime.severeCasesByRequestedTime = severeCasesByRequestedTime.infectionByRequestTime.severeImpact * 0.15;
+  severeCasesByRequested.severeCasesByRequestedTime = severeCasesByRequested.infectionByRequestTime.severeImpact * 0.15;
+
+  return severeCasesByRequested;
+};
 
 // severeCasesByRequestedTime = infectionByRequestTime;
 
 
-console.log(severeCasesByRequestedTime);
+// console.log(severeCasesByRequestedTime(30, {
+//     region: {
+//         name: "Africa",
+//         avgAge: 19.7,
+//         avgDailyIncomeInUSD: 5,
+//         avgDailyIncomePopulation: 0.71
+//     },
+//     periodType: "days",
+//     timeToElapse: 58,
+//     reportedCases: 674,
+//     population: 66622705,
+//     totalHospitalBeds: 1380614
+// }));
 
+
+/* eslint-disable max-len */
 exports.default = severeCasesByRequestedTime;
